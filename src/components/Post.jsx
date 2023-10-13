@@ -13,7 +13,9 @@ const Post = () => {
             post
         }
 
-        fetch("http://localhost:5000/blogs", {
+        console.log(fullPost);
+
+        fetch("http://localhost:8800/blogs", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
@@ -21,8 +23,10 @@ const Post = () => {
             body: JSON.stringify(fullPost)
         })
         
-        .then(res=> res.json())
-        .then(data => console.log(data))
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
     }
 
     return (
